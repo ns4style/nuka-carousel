@@ -147,6 +147,7 @@ const Carousel = createReactClass({
   }, 
   
   componentWillUpdate(nextProps, nextState) {
+    this.props.onUpdate();
     if (this.props.needRecalculateHeight && this.props.heightMode == 'max') {
       var height = this.findMaxHeightSlide(this.refs.frame.childNodes[0].childNodes);
       if (this.state.slideHeight !== height) {
@@ -160,10 +161,6 @@ const Carousel = createReactClass({
         this.setDimensions(this.props);
       }
     }
-  },
-
-  componentDidUpdate(){
-    this.props.onUpdate();
   },
   
   componentWillReceiveProps(nextProps) {
