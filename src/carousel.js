@@ -94,6 +94,7 @@ const Carousel = createReactClass({
       autoplay: false,
       autoplayInterval: 3000,
       beforeSlide: function() {},
+      onUpdate: function() {},
       cellAlign: 'left',
       cellSpacing: 0,
       data: function() {},
@@ -160,8 +161,11 @@ const Carousel = createReactClass({
       }
     }
   },
-  
 
+  componentDidUpdate(){
+    this.props.onUpdate();
+  },
+  
   componentWillReceiveProps(nextProps) {
     this.setState({
       slideCount: nextProps.children.length,
