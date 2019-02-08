@@ -955,6 +955,7 @@ const Carousel = createReactClass({
       marginRight: this.props.vertical ? 'auto' : this.props.cellSpacing / 2,
       marginTop: this.props.vertical ? this.props.cellSpacing / 2 : 'auto',
       marginBottom: this.props.vertical ? this.props.cellSpacing / 2 : 'auto',
+      visibility: this.state.currentSlide == index ? 'visible' : 'hidden'
     };
   },
 
